@@ -126,4 +126,6 @@ int main()
    d1.operator++();
    d1.print();
    d2.print(month, day2);
+
+   return 0;
 }
