@@ -94,7 +94,8 @@ int main()
 {
    int day, day2, holder;
    string month;
-   string monthName[12] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
+   string monthName[12] = {"January","February","March","April","May","June",
+                           "July","August","September","October","November","December"};
    int monthDay[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
    while(day < 1 || day > 365)
    {
