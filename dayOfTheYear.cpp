@@ -68,6 +68,10 @@ public:
 			cout << "December " << (day-334) <<endl;
 		}
    }
+   void print(string m, int d)
+   {
+      cout << m << " " << d << endl;
+   }
    void operator++()
    {
       ++day;
@@ -88,13 +92,38 @@ public:
 
 int main()
 {
-   DayOfYear d1(5);
-   DayOfYear d2(80);
-   DayOfYear d3(40);
+   int day, day2, holder;
+   string month;
+   string monthName[12] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
+   int monthDay[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+   while(day < 1 || day > 365)
+   {
+      cout << "Enter day of year: ";
+      cin >> day;
+   }
+   DayOfYear d1(day);
+
+
+   cout << "Enter Month ";
+   cin >> month;
+   for(int i = 0; i < 12; i++)
+   {
+      if(month == monthName[i])
+      {
+         holder = monthDay[i];
+      }
+   }
+   do
+   {
+      cout << "Enter day in range of month ";
+      cin >> day2;
+   }while(day2 < 1 || day2 > holder);
+
+   DayOfYear d2(month, day2);
 
    d1.print();
+   cout << "Day incremented ";
    d1.operator++();
    d1.print();
-   d2.print();
-   d3.print();
+   d2.print(month, day2);
 }
